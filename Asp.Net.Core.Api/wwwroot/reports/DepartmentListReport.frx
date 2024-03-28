@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" DoublePass="true" ReportInfo.Created="04/25/2022 17:26:51" ReportInfo.Modified="01/20/2023 13:17:04" ReportInfo.CreatorVersion="2023.1.0.0">
+  <ScriptText>using System;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Drawing;
+using System.Data;
+using FastReport;
+using FastReport.Data;
+using FastReport.Dialog;
+using FastReport.Barcode;
+using FastReport.Table;
+using FastReport.Utils;
+
+namespace FastReport
+{
+  public class ReportScript
+  {   
+  }
+}
+</ScriptText>
+  <Dictionary>
+    <TableDataSource Name="Department_Table" ReferenceName="NorthWind.Table1" DataType="System.Int32" Enabled="true">
+      <Column Name="id" DataType="System.Int32"/>
+      <Column Name="department_code" DataType="System.String"/>
+      <Column Name="department_name" DataType="System.String"/>
+    </TableDataSource>
+  </Dictionary>
+  <ReportPage Name="Page1" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="75.6">
+      <TextObject Name="Text5" Top="18.9" Width="718.2" Height="37.8" Text="Department List" HorzAlign="Center" Font="Arial, 20pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="79.6" Width="718.2" Height="28.35"/>
+    <DataBand Name="Data1" Top="111.95" Width="718.2" Height="198.45" DataSource="Department_Table">
+      <TextObject Name="Text1" Left="340.2" Top="18.9" Width="378" Height="18.9" Text="[Department_Table.department_name]" Font="Arial, 10pt"/>
+      <TextObject Name="Text2" Top="18.9" Width="340.2" Height="18.9" Text="[Department_Table.department_code]" Font="Arial, 10pt"/>
+      <TextObject Name="Text3" Width="340.2" Height="18.9" Text="Department Code" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text4" Left="340.2" Width="378" Height="18.9" Text="Department Name" Font="Arial, 10pt, style=Bold"/>
+      <DataFooterBand Name="DataFooter1" Top="314.4" Width="718.2" Height="37.8"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="356.2" Width="718.2" Height="18.9"/>
+  </ReportPage>
+</Report>

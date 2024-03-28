@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Created="11/09/2023 23:50:34" ReportInfo.Modified="11/14/2023 21:42:48" ReportInfo.CreatorVersion="2022.3.11.0">
+  <Dictionary>
+    <TableDataSource Name="invoice1" ReferenceName="NorthWind.Table1" DataType="System.Int32" Enabled="true">
+      <Column Name="invoice_date" DataType="System.DateTime"/>
+      <Column Name="from_date" DataType="System.DateTime"/>
+      <Column Name="to_date" DataType="System.DateTime"/>
+      <Column Name="contract_type" DataType="System.Int32"/>
+      <Column Name="invoice_number" DataType="System.String"/>
+      <Column Name="customer_id" DataType="System.Int32"/>
+      <Column Name="customer_name" DataType="System.String"/>
+      <Column Name="customer_contactno" DataType="System.String"/>
+      <Column Name="customer_email" DataType="System.String"/>
+      <Column Name="customer_address" DataType="System.String"/>
+      <Column Name="customer_statecode" DataType="System.String"/>
+      <Column Name="customer_statename" DataType="System.String"/>
+      <Column Name="customer_gstno" DataType="System.String"/>
+      <Column Name="customer_pannumber" DataType="System.String"/>
+      <Column Name="companyname" DataType="System.String"/>
+      <Column Name="companycode" DataType="System.String"/>
+      <Column Name="company_address" DataType="System.String"/>
+      <Column Name="company_email" DataType="System.String"/>
+      <Column Name="company_gstnumber" DataType="System.String"/>
+      <Column Name="company_pannumber" DataType="System.String"/>
+      <Column Name="company_phoneno" DataType="System.String"/>
+      <Column Name="bank_name" DataType="System.String"/>
+      <Column Name="account_number" DataType="System.String"/>
+      <Column Name="bank_address" DataType="System.String"/>
+      <Column Name="branch" DataType="System.String"/>
+      <Column Name="ifsc_code" DataType="System.String"/>
+      <Column Name="cgst" DataType="System.Decimal"/>
+      <Column Name="sgst" DataType="System.Decimal"/>
+      <Column Name="igst" DataType="System.Decimal"/>
+      <Column Name="taxable_amount" DataType="System.Decimal"/>
+      <Column Name="cgst_amount" DataType="System.Decimal"/>
+      <Column Name="sgst_amount" DataType="System.Decimal"/>
+      <Column Name="igst_amount" DataType="System.Decimal"/>
+      <Column Name="total_amount" DataType="System.Decimal"/>
+    </TableDataSource>
+    <TableDataSource Name="invoice2" ReferenceName="NorthWind.Table2" DataType="System.Int32" Enabled="true">
+      <Column Name="contractid" DataType="System.Int32"/>
+      <Column Name="contract_detail_id" DataType="System.Int32"/>
+      <Column Name="designation" DataType="System.Int32"/>
+      <Column Name="designationname" DataType="System.String"/>
+      <Column Name="shiftid" DataType="System.Int32"/>
+      <Column Name="shiftname" DataType="System.String"/>
+      <Column Name="hsn_code" DataType="System.String"/>
+      <Column Name="no_of_person" DataType="System.Int32"/>
+      <Column Name="allowance" DataType="System.Int32"/>
+      <Column Name="days_per_person" DataType="System.Int32"/>
+      <Column Name="total_days" DataType="System.Int32"/>
+      <Column Name="man_worked" DataType="System.Int32"/>
+      <Column Name="contractual_amount" DataType="System.Int32"/>
+      <Column Name="per_day_salary" DataType="System.Int32"/>
+      <Column Name="total_amount" DataType="System.Int32"/>
+    </TableDataSource>
+    <Total Name="Total" Expression="[invoice2.total_amount]" Evaluator="Data1"/>
+  </Dictionary>
+  <ReportPage Name="Page1" RawPaperSize="9" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="718.2" Height="56.7">
+      <LineObject Name="Line1" Top="9.45" Height="37.8"/>
+      <LineObject Name="Line2" Top="9.45" Width="718.2"/>
+      <LineObject Name="Line3" Left="718.2" Top="9.45" Height="37.8"/>
+      <LineObject Name="Line4" Top="47.25" Width="718.2"/>
+      <TextObject Name="Text1" Top="9.45" Width="718.2" Height="37.8" Text="Tax Invoice" HorzAlign="Center" VertAlign="Center" Font="Arial, 14pt, style=Bold"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Top="62.03" Width="718.2" Height="311.85">
+      <LineObject Name="Line5" Width="718.2"/>
+      <LineObject Name="Line6" Height="302.4"/>
+      <LineObject Name="Line7" Top="302.4" Width="718.2"/>
+      <LineObject Name="Line8" Left="718.2" Height="302.4"/>
+      <LineObject Name="Line9" Left="311.85" Height="302.4"/>
+      <LineObject Name="Line10" Top="151.2" Width="718.2"/>
+      <LineObject Name="Line11" Left="310.3" Top="56.7" Width="406.35"/>
+      <LineObject Name="Line12" Left="311.85" Top="103.95" Width="406.35"/>
+      <TextObject Name="Text2" Left="311.85" Width="113.4" Height="28.35" Text="Invoice No." VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <LineObject Name="Line13" Left="510.3" Height="151.2"/>
+      <TextObject Name="Text4" Left="510.3" Width="94.5" Height="28.35" Text="Date :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text6" Left="311.85" Top="56.7" Width="198.45" Height="47.25" Text="Client ID" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text7" Left="510.3" Top="56.7" Width="207.9" Height="47.25" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text8" Left="311.85" Top="103.95" Width="198.45" Height="47.25" Text="Suppliers Ref" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text9" Left="510.3" Top="103.95" Width="207.9" Height="47.25" Text="[invoice1.invoice_number]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text10" Top="132.3" Width="94.5" Height="18.9" Text="EMail           :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text11" Top="113.4" Width="94.5" Height="18.9" Text="GSTIN/UIN  :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text12" Top="94.5" Width="94.5" Height="18.9" Text="PAN NO      :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text13" Left="311.85" Top="151.2" Width="198.45" Height="47.25" Text="Service Month" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <LineObject Name="Line14" Left="510.3" Top="151.2" Height="151.2"/>
+      <LineObject Name="Line15" Left="311.85" Top="198.45" Width="406.35"/>
+      <TextObject Name="Text14" Left="311.85" Top="198.45" Width="198.45" Height="37.8" Text="Service Period :&#13;&#10;From / to" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <LineObject Name="Line16" Left="311.85" Top="236.25" Width="406.35"/>
+      <TextObject Name="Text15" Left="311.85" Top="236.25" Width="198.45" Height="66.15" Text="Contact Person / &#13;&#10;Designation" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text49" Top="283.5" Width="94.5" Height="18.9" Text="GSTIN / UIN  :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text50" Top="264.6" Width="94.5" Height="18.9" Text="State Name :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text52" Width="311.85" Height="94.5" Text="Company Code : [invoice1.companycode]&#13;&#10;[invoice1.companyname]&#13;&#10;[invoice1.company_address]&#13;&#10;[invoice1.company_phoneno]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text53" Left="94.5" Top="94.5" Width="217.35" Height="18.9" Text="[invoice1.company_pannumber]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text54" Left="94.5" Top="113.4" Width="217.35" Height="18.9" Text="[invoice1.company_gstnumber]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text55" Left="94.5" Top="132.3" Width="217.35" Height="18.9" Text="[invoice1.company_email]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text56" Left="311.85" Top="28.35" Width="198.45" Height="28.35" Text="[invoice1.invoice_number]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text57" Left="510.3" Top="28.35" Width="207.9" Height="28.35" Text="[invoice1.invoice_date]" Format="Date" Format.Format="d" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text58" Top="151.2" Width="94.5" Height="18.9" Text="Buyer" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text59" Top="170.1" Width="311.85" Height="75.6" Text="[invoice1.customer_name][invoice1.customer_address][invoice1.customer_contactno][invoice1.customer_email]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text60" Left="94.5" Top="264.6" Width="217.35" Height="18.9" Text="[invoice1.customer_statename] [invoice1.customer_statecode]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text61" Left="94.5" Top="283.5" Width="217.35" Height="18.9" Text="[invoice1.customer_gstno]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text62" Top="245.7" Width="94.5" Height="18.9" Text="PAN NO      :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text63" Left="94.5" Top="245.7" Width="217.35" Height="18.9" Text="[invoice1.customer_pannumber]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text64" Left="510.3" Top="198.45" Width="207.9" Height="37.8" Text="[invoice1.from_date] To [invoice1.to_date]" VertAlign="Center" Font="Arial, 10pt">
+        <Formats>
+          <DateFormat/>
+          <DateFormat/>
+        </Formats>
+      </TextObject>
+      <TextObject Name="Text89" Left="510.3" Top="56.7" Width="207.9" Height="47.25" Text="[invoice1.customer_contactno]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text90" Left="510.3" Top="151.2" Width="207.9" Height="47.25" Text="[invoice1.invoice_date]" Format="Date" Format.Format="MMMM yyyy" VertAlign="Center" Font="Arial, 10pt"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Top="431.8" Width="718.2" Height="37.8" CanGrow="true" DataSource="invoice2">
+      <LineObject Name="Line29" Width="718.2"/>
+      <LineObject Name="Line30" Height="37.8"/>
+      <LineObject Name="Line31" Top="37.8" Width="718.2"/>
+      <LineObject Name="Line32" Left="718.2" Height="37.8"/>
+      <LineObject Name="Line33" Left="47.25" Height="37.8"/>
+      <LineObject Name="Line34" Left="245.7" Height="37.8"/>
+      <LineObject Name="Line35" Left="321.3" Height="37.8"/>
+      <LineObject Name="Line36" Left="378" Height="37.8"/>
+      <LineObject Name="Line37" Left="434.7" Height="37.8"/>
+      <LineObject Name="Line38" Left="481.95" Height="37.8"/>
+      <LineObject Name="Line39" Left="529.2" Height="37.8"/>
+      <LineObject Name="Line40" Left="614.25" Height="37.8"/>
+      <TextObject Name="Text51" Width="47.25" Height="37.8" Text="[Row#]" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text70" Left="47.25" Width="198.45" Height="37.8" Text="[invoice2.designationname]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text71" Left="245.7" Width="75.6" Height="37.8" Text="[invoice2.hsn_code]" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text72" Left="321.3" Width="56.7" Height="37.8" Text="[invoice2.no_of_person]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text73" Left="378" Width="56.7" Height="37.8" Text="[invoice2.days_per_person]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text74" Left="434.7" Width="47.25" Height="37.8" Text="[invoice2.total_days]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text75" Left="481.95" Width="47.25" Height="37.8" Text="[invoice2.man_worked]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text76" Left="529.2" Width="85.05" Height="37.8" Text="[invoice2.contractual_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text77" Left="614.25" Width="103.95" Height="37.8" Text="[invoice2.total_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <DataHeaderBand Name="DataHeader1" Top="379.22" Width="718.2" Height="47.25">
+        <LineObject Name="Line17" Width="718.2"/>
+        <LineObject Name="Line18" Height="47.25"/>
+        <LineObject Name="Line19" Top="47.25" Width="718.2"/>
+        <LineObject Name="Line20" Left="718.2" Height="47.25"/>
+        <LineObject Name="Line21" Left="47.25" Height="47.25"/>
+        <TextObject Name="Text16" Width="47.25" Height="47.25" Text="S.No" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text17" Left="47.25" Width="189" Height="47.25" Text="Particulars" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line22" Left="245.7" Height="47.25"/>
+        <TextObject Name="Text18" Left="245.7" Width="75.6" Height="47.25" Text="HSN/SAC" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line23" Left="321.3" Height="47.25"/>
+        <TextObject Name="Text19" Left="321.3" Width="56.7" Height="47.25" Text="No of&#13;&#10;Person" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line24" Left="378" Height="47.25"/>
+        <TextObject Name="Text20" Left="378" Width="56.7" Height="47.25" Text="Days&#13;&#10;per&#13;&#10;Person" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line25" Left="434.7" Height="47.25"/>
+        <TextObject Name="Text21" Left="434.7" Width="47.25" Height="47.25" Text="Total&#13;&#10;Days" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line26" Left="481.95" Height="47.25"/>
+        <TextObject Name="Text22" Left="481.95" Width="47.25" Height="47.25" Text="Man&#13;&#10;Days" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line27" Left="529.2" Height="47.25"/>
+        <TextObject Name="Text23" Left="529.2" Width="85.05" Height="47.25" Text="Contractual&#13;&#10;Amount" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line28" Left="614.25" Height="47.25"/>
+        <TextObject Name="Text24" Left="614.25" Width="103.95" Height="47.25" Text="Amount" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter1" Top="474.93" Width="718.2" Height="122.85">
+        <LineObject Name="Line41" Width="718.2"/>
+        <LineObject Name="Line42" Height="113.4"/>
+        <LineObject Name="Line44" Left="718.2" Height="113.4"/>
+        <LineObject Name="Line45" Left="614.25" Height="113.4"/>
+        <LineObject Name="Line46" Left="434.7" Height="113.4"/>
+        <TextObject Name="Text25" Left="434.7" Width="179.55" Height="28.35" Text="Total" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line47" Left="434.7" Top="28.35" Width="179.55"/>
+        <TextObject Name="Text26" Left="434.7" Top="28.35" Width="179.55" Height="28.35" Text="Add: SGST @ 9 %" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+        <LineObject Name="Line48" Left="434.7" Top="56.7" Width="179.55"/>
+        <TextObject Name="Text27" Left="434.7" Top="56.7" Width="179.55" Height="28.35" Text="CGST @ 9 %" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+        <LineObject Name="Line49" Left="434.7" Top="85.05" Width="179.55"/>
+        <TextObject Name="Text28" Left="434.7" Top="85.05" Width="179.55" Height="28.35" Text="Grand Total" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line50" Top="113.4" Width="718.2"/>
+        <LineObject Name="Line51" Left="614.25" Top="28.35" Width="103.95"/>
+        <LineObject Name="Line52" Left="614.25" Top="56.7" Width="103.95"/>
+        <LineObject Name="Line53" Left="614.25" Top="85.05" Width="103.95"/>
+        <TextObject Name="Text29" Width="245.7" Height="28.35" Text="Amount Chargeable (in words)INR :-" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text85" Left="614.25" Width="103.95" Height="28.35" Text="[Total]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text86" Left="614.25" Top="28.35" Width="103.95" Height="28.35" Text="[invoice1.sgst_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text87" Left="614.25" Top="56.7" Width="103.95" Height="28.35" Text="[invoice1.cgst_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text88" Left="614.25" Top="85.05" Width="102.5" Height="28.35" Text="[invoice1.total_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      </DataFooterBand>
+    </DataBand>
+    <DataBand Name="Data2" Top="674.6" Width="718.2" Height="37.8" DataSource="invoice1">
+      <LineObject Name="Line66" Width="718.2"/>
+      <LineObject Name="Line67" Height="37.8"/>
+      <LineObject Name="Line68" Top="37.8" Width="718.2"/>
+      <LineObject Name="Line69" Left="718.2" Height="37.8"/>
+      <LineObject Name="Line70" Left="94.5" Height="37.8"/>
+      <LineObject Name="Line71" Left="226.8" Height="37.8"/>
+      <LineObject Name="Line72" Left="292.95" Height="37.8"/>
+      <LineObject Name="Line73" Left="415.8" Height="37.8"/>
+      <LineObject Name="Line74" Left="491.4" Height="37.8"/>
+      <LineObject Name="Line75" Left="595.35" Height="37.8"/>
+      <TextObject Name="Text78" Width="94.5" Height="37.8" Text="Chennai" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      <TextObject Name="Text79" Left="94.5" Width="132.3" Height="37.8" Text="[invoice1.taxable_amount]" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text80" Left="226.8" Width="66.15" Height="37.8" Text="[invoice1.sgst]" Format="Percent" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text81" Left="292.95" Width="122.85" Height="37.8" Text="[invoice1.sgst_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text82" Left="415.8" Width="75.6" Height="37.8" Text="[invoice1.cgst]" Format="Percent" Format.UseLocale="true" Format.DecimalDigits="0" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text83" Left="491.4" Width="103.95" Height="37.8" Text="[invoice1.cgst_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <TextObject Name="Text84" Left="595.35" Width="122.85" Height="37.8" Text="[invoice1.total_amount]" Format="Number" Format.UseLocale="true" Format.DecimalDigits="2" HorzAlign="Right" VertAlign="Center" Font="Arial, 10pt"/>
+      <DataHeaderBand Name="DataHeader2" Top="603.12" Width="718.2" Height="66.15">
+        <LineObject Name="Line54" Width="718.2"/>
+        <LineObject Name="Line55" Height="66.15"/>
+        <LineObject Name="Line56" Top="66.15" Width="718.2"/>
+        <LineObject Name="Line57" Left="718.2" Height="66.15"/>
+        <TextObject Name="Text30" Width="94.5" Height="66.15" Text="Service &#13;&#10;Location &#13;&#10;" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line58" Left="94.5" Height="66.15"/>
+        <TextObject Name="Text31" Left="94.5" Width="132.3" Height="66.15" Text="Taxable Value" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line59" Left="226.8" Height="66.15"/>
+        <LineObject Name="Line60" Left="226.8" Top="34.35" Width="368.55"/>
+        <LineObject Name="Line61" Left="595.35" Height="66.15"/>
+        <TextObject Name="Text32" Left="226.8" Width="189" Height="28.35" Text="State Tax" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text33" Left="226.8" Top="37.8" Width="66.15" Height="28.35" Text="Rate" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text34" Left="292.95" Top="37.8" Width="122.85" Height="28.35" Text="Amount" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line62" Left="415.8" Height="66.15"/>
+        <LineObject Name="Line63" Left="292.95" Top="34.8" Height="30.35"/>
+        <TextObject Name="Text35" Left="415.8" Top="37.8" Width="75.6" Height="28.35" Text="Rate" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line64" Left="491.4" Top="33.8" Height="30.35"/>
+        <TextObject Name="Text36" Left="491.4" Top="37.8" Width="103.95" Height="28.35" Text="Amount" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text37" Left="595.35" Width="122.85" Height="66.15" Text="Total Tax Amount" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line65" Top="66.15" Width="103.95"/>
+        <TextObject Name="Text38" Left="415.8" Width="179.55" Height="28.35" Text="Central Tax" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      </DataHeaderBand>
+      <DataFooterBand Name="DataFooter2" Top="717.73" Width="718.2" Height="132.3">
+        <LineObject Name="Line76" Width="718.2"/>
+        <LineObject Name="Line77" Height="132.3"/>
+        <LineObject Name="Line78" Top="28.35" Width="718.2"/>
+        <LineObject Name="Line79" Left="718.2" Height="132.3"/>
+        <TextObject Name="Text39" Width="189" Height="28.35" Text="Tax Amount In Words :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text40" Top="28.35" Width="122.85" Height="28.35" Text="BANK DETAILS" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text41" Top="56.7" Width="94.5" Height="18.9" Text="Bank     :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text42" Top="75.6" Width="94.5" Height="18.9" Text="AC        :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text43" Top="94.5" Width="94.5" Height="18.9" Text="IFSC     :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text44" Top="113.4" Width="94.5" Height="18.9" Text="Branch :" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <LineObject Name="Line80" Left="359.1" Top="28.35" Height="103.95"/>
+        <LineObject Name="Line81" Top="132.3" Width="718.2"/>
+        <TextObject Name="Text45" Left="359.1" Top="28.35" Width="37.8" Height="18.9" Text="For" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text46" Left="359.1" Top="113.4" Width="359.1" Height="18.9" Text="Authorize Signatory" HorzAlign="Center" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+        <TextObject Name="Text65" Left="94.5" Top="56.7" Width="264.6" Height="18.9" Text="[invoice1.bank_name]" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text66" Left="94.5" Top="75.6" Width="264.6" Height="18.9" Text="[invoice1.account_number]" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text67" Left="94.5" Top="94.5" Width="264.6" Height="18.9" Text="[invoice1.ifsc_code]" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text68" Left="94.5" Top="113.4" Width="264.6" Height="18.9" Text="[invoice1.branch]" VertAlign="Center" Font="Arial, 10pt"/>
+        <TextObject Name="Text69" Left="387.45" Top="47.25" Width="330.75" Height="47.25" Text="[invoice1.companyname]" VertAlign="Center" Font="Arial, 10pt, style=Bold"/>
+      </DataFooterBand>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Top="855.37" Width="718.2" Height="18.9">
+      <TextObject Name="Text47" Width="359.1" Height="18.9" Text="This is Computer Generated Invoice" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+      <TextObject Name="Text48" Left="529.2" Width="189" Height="18.9" Text="[Page#] of [TotalPages#]" HorzAlign="Right" VertAlign="Center" Font="Arial, 8pt, style=Bold"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

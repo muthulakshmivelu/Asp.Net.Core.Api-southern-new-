@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>7090602b-e59f-410b-834f-277cd6101e36</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+	
+	<ItemGroup>
+		<None Include="wwwroot\reports\DepartmentListReport.frx" />
+	</ItemGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="FluentMigrator" Version="3.3.2" />
+	  <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+	  <PackageReference Include="FastReport.Compat" Version="2023.3.1" />
+	  <PackageReference Include="FastReport.OpenSource" Version="2023.3.7" />
+	  <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2023.3.7" />
+	  <PackageReference Include="FastReport.OpenSource.Web" Version="2023.3.7" />
+	  <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.24" />
+	  <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.2.0" />
+	  <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+	  <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.33.0" />
+	  <PackageReference Include="PartialResponse.AspNetCore.Mvc.Formatters.Json" Version="5.1.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="6.5.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.5.0" />
+	  <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+	  <PackageReference Include="MediatR" Version="11.0.0" />
+	  <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+	  <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.24">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	  </PackageReference>
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Asp.Net.Core.Business\Asp.Net.Core.Business.csproj" />
+		<ProjectReference Include="..\Asp.Net.Core.DataContext\Asp.Net.Core.DataContext.csproj" />
+		<ProjectReference Include="..\Asp.Net.Core.DataModel\Asp.Net.Core.DataModel.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Reports\" />
+	  <Folder Include="wwwroot\reports\" />
+	</ItemGroup>
+
+	<ProjectExtensions><VisualStudio><UserProperties appsettings_1development_1json__JsonSchema="https://ffizer.github.io/ffizer/ffizer.schema.json" /></VisualStudio></ProjectExtensions>
+
+
+</Project>

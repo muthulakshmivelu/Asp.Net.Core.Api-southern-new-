@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\Contract\SiteMapping\**" />
+    <EmbeddedResource Remove="Services\Contract\SiteMapping\**" />
+    <None Remove="Services\Contract\SiteMapping\**" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+		<PackageReference Include="FastReport.Compat" Version="2023.3.1" />
+		<PackageReference Include="FastReport.OpenSource" Version="2023.3.7" />
+		<PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2023.3.7" />
+		<PackageReference Include="FastReport.OpenSource.Web" Version="2023.3.7" />
+		<PackageReference Include="MediatR" Version="11.0.0" />
+		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+		<PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="6.0.2" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.33.0" />
+	</ItemGroup>
+
+
+	<ItemGroup>
+		<ProjectReference Include="..\Asp.Net.Core.DataContext\Asp.Net.Core.DataContext.csproj" />
+	</ItemGroup>
+
+</Project>
